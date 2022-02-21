@@ -1,7 +1,8 @@
 #ifndef _TOKENIZER_
 #define _TOKENIZER_
 
-
+/*Returns length of a given string*/
+int str_len(char *str);
 /* Return true (non-zero) if c is a whitespace characer
    ('\t' or ' ').  
    Zero terminators are not printable (therefore false) */
