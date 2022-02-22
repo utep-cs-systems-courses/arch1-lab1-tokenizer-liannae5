@@ -1,12 +1,30 @@
 Project 1: Tokenizer
 ====================
-# Instructions:
+## Objective:
+To create a program that can tokenize each word in a given string and keep a
+history of commands used.
 
-You should document your tokenizer in this file.
+## Challenges:
 
-This file is written in the refreshingly simple `markdown` text
-formatting language.
+For milestone 1, the only challenge I had at first was getting the indicator
+in the UI to appear each time a new line started. I was able to fix it by
+adjusting where I put he 'fputs' statement in the while loop.
 
-To learn about text formatting using markdown, we encourage you to examine 
- - [../README.md](../README.md)
- - the online [Markdown Guide](https://www.markdownguide.org/).
+I had no major challenges in milestone 2.
+
+For milestone 3 I had trouble traversing through the entire string to tokenize
+each word, because my original code would only get the first word and return
+a space for the remaining slots in tokens. However I realized that if I
+updated the string using word_terminator to find the end of the word before
+each iteration of the for-loop, it allowed each word to be tokenized properly.
+
+For milestone 4, I have completed each function, however, I am having a
+segmentation issue.I am fairly confident that the functions word aside from
+the segmentation issue.
+
+## Instructions:
+
+Use "#" followed by a string you want to tokenize
+Use "!h" to print the entire history
+Use "!" followed by the id number of history that you want to print
+
