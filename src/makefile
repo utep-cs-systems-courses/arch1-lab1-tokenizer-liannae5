@@ -1,7 +1,7 @@
 #makefile for lab 1
 
 #list of object files
-OBJS= uimain.o tokenizer.o history.o
+OBJS= tokenizer.o history.o uimain.o
 
 #flags
 CFLAGS=-g -O3 # -g debug, -O3 for optimization

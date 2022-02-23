@@ -9,7 +9,7 @@ int main()
   
   while(1){
 
-    fputs("Type '!h' to print history,'!<num>' for specfic id, #to tokenize, or *' to exit the program \n$ ", stdout);
+    fputs("Type '!h' to print history,'!<num>' for specfic id, # to tokenize, or *' to exit the program \n$ ", stdout);
     fflush(stdout);
     char words[100];
     int c;
@@ -19,8 +19,11 @@ int main()
     switch(c){
     case '!':
       fgets(words,100,stdin);
+      char *temp1 = words;
+      add_history(history,temp1);
       if(words[0] != 'h'){
 	printf("here is the chosen id\n");
+	printf(get_history(history,atoi(words)));
       }
       else{
 	print_history(history);
@@ -29,15 +32,15 @@ int main()
     case '#':
       printf("You chose tokenize\n");
       fgets(words, 100, stdin);
-      char *temp = words[0];
-      add_history(history,temp);
+      char *temp2 =words;
+      add_history(history,temp2);
       char **tokens = tokenize(words);
       printf("This is the list:\n ");
       print_tokens(tokens);
       free_tokens(tokens);
       break;
     case '*':
-      puts("Goobde!");
+      puts("Goodbye!");
       goto done;
       break;
     default:

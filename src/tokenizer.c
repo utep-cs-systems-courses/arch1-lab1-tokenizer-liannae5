@@ -90,7 +90,7 @@ void print_tokens(char **tokens){
     i++; // increases representative index for each token
     tokens++; // increases pointer to next token
   }
-  printf("Done printing!");
+  printf("Done printing!\n");
 }
 
 void free_tokens(char **tokens){

@@ -4,13 +4,13 @@
 #include "tokenizer.h"
 
 List* init_history(){
-  List *list = malloc(sizeof(List));// allocates memory for List
-  list->root = malloc(sizeof(Item));// allocates memory for item
+  List* list =(List*)malloc(sizeof(Item)*50);// allocates memory for the list
+  return list;
 }
 
 void add_history(List *list, char *str){
   Item *curr_node = list->root;
-
+ 
   if(curr_node == NULL){
       Item *new_node = (Item*)malloc(sizeof(Item));
       new_node->id = 1;
@@ -38,7 +38,7 @@ char *get_history(List *list, int id){
     }
     curr_node = curr_node->next;
   }
-  printf("id number invalid");
+  printf("id number invalid\n");
   return 0;
 }
 
@@ -48,7 +48,7 @@ void print_history(List *list){
     printf("%d: %s\n",curr_node->id,curr_node->str);
     curr_node = curr_node->next;
   }
-  printf("Done Printing!");
+  printf("Done Printing!\n");
 }
 
 void free_history(List *list){
