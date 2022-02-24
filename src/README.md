@@ -18,13 +18,15 @@ a space for the remaining slots in tokens. However I realized that if I
 updated the string using word_terminator to find the end of the word before
 each iteration of the for-loop, it allowed each word to be tokenized properly.
 
-For milestone 4, I have completed each function, however, I am having a
-segmentation issue.I am fairly confident that the functions word aside from
-the segmentation issue.
+For milestone 4, I had a segmentation issue, but I realized it was because I
+didn't allocate the memory for the list correctly at first and I fixed the
+memory allocation line accordingly.
 
 ## Instructions:
 
-Use "#" followed by a string you want to tokenize
-Use "!h" to print the entire history
-Use "!" followed by the id number of history that you want to print
+-Use "#" followed by a string you want to tokenize
+
+-Use "!h" to print the entire history
+
+-Use "!" followed by the id number of history that you want to print
 
