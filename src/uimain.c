@@ -5,7 +5,7 @@
 int main()
 {
   puts("Hello!");
-  List *history = init_history();
+  List *history = init_history(); // creates history list
   
   while(1){
 
@@ -17,29 +17,30 @@ int main()
     if(c == EOF)
       goto done;
     switch(c){
-    case '!':
-      fgets(words,100,stdin);
+    case '!': // history commands
+      fgets(words,100,stdin); // gets string input
       char *temp1 = words;
-      add_history(history,temp1);
-      if(words[0] != 'h'){
-	printf("here is the chosen id\n");
-	printf(get_history(history,atoi(words)));
+      add_history(history,temp1); // adds string to history
+      if(words[0] != 'h'){ // looks for id 
+	printf("Here is the chosen id:\n\n");
+	printf(get_history(history,atoi(words))); // returns result of get_history
+	printf("\n");
       }
       else{
-	print_history(history);
+	print_history(history); // prints entire history if words[0] = 'h'
       }
       break;
-    case '#':
+    case '#': // tokenize command
       printf("You chose tokenize\n");
-      fgets(words, 100, stdin);
+      fgets(words, 100, stdin); // gets string input
       char *temp2 =words;
-      add_history(history,temp2);
-      char **tokens = tokenize(words);
+      add_history(history,temp2); // adds to list history
+      char **tokens = tokenize(words); // tokenizes the string
       printf("This is the list:\n ");
-      print_tokens(tokens);
-      free_tokens(tokens);
+      print_tokens(tokens); // prints the tokens
+      free_tokens(tokens); // deallocates memory for the tokens
       break;
-    case '*':
+    case '*': // quits the program
       puts("Goodbye!");
       goto done;
       break;
